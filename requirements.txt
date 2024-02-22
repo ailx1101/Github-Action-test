@@ -1,2 +1,2 @@
-requests
-jieba
+lxml==5.1.0
+Requests==2.31.0
