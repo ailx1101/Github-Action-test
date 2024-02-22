@@ -19,4 +19,19 @@ jobs:
           pip3 install -r ./requirements.txt
       - name: Running
         run: python3 ./main.py
+      - name: Commit
+        env:
+          GIT_NAME: GitHub Actions[Bot]
+          GIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git config --local user.name $GIT_NAME
+          git config --local user.email $GIT_EMAIL
+          git add ./iptv.txt
+          git commit -m "Github action update at `date '+%Y-%m-%d %H:$M:%S'`."
+      - name: push
+        uses: ailx1101/aptv@master/m3u
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          
 
