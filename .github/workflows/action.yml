@@ -1,5 +1,5 @@
 name: action test
-run-name: GitHub Actions 🚀
+run-name: 更新IPTV并推送
 on: [push]
 env:
   TZ: Asia/Shanghai
@@ -30,8 +30,8 @@ jobs:
           git commit -m "Github action update at `date '+%Y-%m-%d %H:$M:%S'`."
       - name: push
         uses: ailx1101/aptv/m3u@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+        run: |
+          git remote add target git@github.com:ailx1101/aptv.git
+          git push target HEAD:refs/heads/master
           
 
