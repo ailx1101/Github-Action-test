@@ -29,7 +29,8 @@ jobs:
           git add ./iptv.txt
           git commit -m "Github action update at `date '+%Y-%m-%d %H:$M:%S'`."
       - name: push
-        uses: ailx1101/aptv/m3u@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           git remote add target git@github.com:ailx1101/aptv.git
           git push target HEAD:refs/heads/master
