@@ -21,13 +21,13 @@ jobs:
         run: python3 ./main.py
       - name: Commit
         env:
-          GIT_NAME: GitHub Actions[Bot]
-          GIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_NAME: shzlx1101
+          GIT_EMAIL: 3300194457@qq.com
         run: |
           git config --local user.name $GIT_NAME
           git config --local user.email $GIT_EMAIL
           git add ./iptv.txt
-          git commit -m "Github action update at `date '+%Y-%m-%d %H:$M:%S'`."
+          git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
       - name: push
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
