@@ -37,9 +37,4 @@ jobs:
           dest_repo: ailx1101/aptv
           dest_path: ./m3u
           commit_message: "iptv测试"
-        env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git remote add target https://github.com/ailx1101/aptv.git
-          git push target HEAD:refs/heads/master
 
