@@ -29,8 +29,16 @@ jobs:
           git add ./iptv.txt
           git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
       - name: Push
+        uses: cpina/github-action-push-to-another-repository@main
+        with:
+          api_key: ${{ secrets.GITHUB_TOKEN }}
+          src_repo: ailx1101/Github-Action-test
+          src_path: ./iptv.txt
+          dest_repo: ailx1101/aptv
+          dest_path: ./m3u
+          commit_message: "iptv测试"
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote add target https://github.com/ailx1101/aptv.git
           git push target HEAD:refs/heads/master
