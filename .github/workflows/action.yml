@@ -34,5 +34,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: dev
           force: true
-          directory: m3u
           repository: ailx1101/aptv
