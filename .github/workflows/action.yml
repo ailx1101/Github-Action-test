@@ -1,8 +1,6 @@
 name: action test
 run-name: GitHub Actions 🚀
-on:
-  schedule:
-    - cron: '0 4 * * *'
+on: [push]
 env:
   TZ: Asia/Shanghai
 jobs:
