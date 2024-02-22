@@ -29,14 +29,9 @@ jobs:
           git add ./iptv.txt
           git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
       - name: Push
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        uses: ad-m/github-push-action@master
         with:
-          source-directory: .
-          destination-github-username: 'ailx1101'
-          destination-repository-name: 'aptv'
-          target-directory: 'm3u'
-          commit-message: "iptv测试"
-          target-branch: master
-
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: dev
+          force: true
+          repository: ailx1101/aptv
