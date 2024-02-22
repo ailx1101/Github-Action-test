@@ -30,11 +30,12 @@ jobs:
           git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
       - name: Push
         uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
-          api_key: ${{ secrets.GITHUB_TOKEN }}
-          src_repo: ailx1101/Github-Action-test
-          src_path: ./iptv.txt
-          dest_repo: ailx1101/aptv
-          dest_path: ./m3u
+          source-directory: ./iptv.txt
+          destination-github-username: ailx1101
+          destination-repository-name: aptv
+          user-email: 41898282+github-actions[bot]@users.noreply.github.com
           commit_message: "iptv测试"
 
