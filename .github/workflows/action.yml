@@ -21,22 +21,16 @@ jobs:
         run: python3 ./main.py
       - name: Commit
         env:
-          GIT_NAME: shzlx1101
-          GIT_EMAIL: 3300194457@qq.com
+          GIT_NAME: GitHub Actions[Bot]
+          GIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
         run: |
           git config --local user.name $GIT_NAME
           git config --local user.email $GIT_EMAIL
           git add ./iptv.txt
           git commit -m "Github action update at `date '+%Y-%m-%d %H:%M:%S'`."
-      - name: push
+      - name: Push
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
-#        env:
-#          github_token: ${{ secrets.ACCESS_TOKEN }}
-#        run: |
-#          git remote add target git@github.com:ailx1101/aptv.git
-#          git push target HEAD:refs/heads/master
-          
 
