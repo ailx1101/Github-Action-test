@@ -34,8 +34,9 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
         with:
           source-directory: ./iptv.txt
-          destination-github-username: ailx1101
-          destination-repository-name: aptv
-          user-email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_message: "iptv测试"
+          destination-github-username: 'ailx1101'
+          destination-repository-name: 'aptv'
+          target-directory: 'm3u'
+          commit-message: "iptv测试"
+          target-branch: master
 
