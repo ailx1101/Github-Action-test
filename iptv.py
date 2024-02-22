@@ -5,7 +5,6 @@ from datetime import datetime
 import requests
 import tools
 import concurrent.futures
-
 from lxml import etree
 
 engine_url = "http://tonkiang.us/"
@@ -66,7 +65,7 @@ def jiexi_html(group_addr):
         with concurrent.futures.ThreadPoolExecutor() as executor:
             results = list(executor.map(T.check_iptv_v2, result_urls))
         for url, status in results:
-            print(status, url)
+            # print(status, url)
             if status == 200:
                 data_list.append(url)
         data_dict[f'{group_addr}'] = data_list

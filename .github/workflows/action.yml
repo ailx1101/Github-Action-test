@@ -1,6 +1,9 @@
 name: action test
 run-name: 更新IPTV并推送
-on: [push]
+on:
+  schedule:
+  - cron: '0 16 * * *'
+
 env:
   TZ: Asia/Shanghai
 jobs:
