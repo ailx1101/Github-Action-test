@@ -2,8 +2,6 @@ name: action test
 run-name: 更新IPTV并推送
 on:
   workflow_dispatch:
-  schedule:
-  - cron: '0 16 * * *'
 
 env:
   TZ: Asia/Shanghai
@@ -25,7 +23,6 @@ jobs:
         run: |
           python3 -m pip install --upgrade pip
           pip3 install -r ./requirements.txt
-          mkdir m3u
       - name: Running
         run: python3 ./iptv.py
       - name: Commit
